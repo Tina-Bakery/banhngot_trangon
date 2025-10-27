@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trà & Thức Uống – TINA Bakery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- 🧁 HEADER -->
+    <header class="header">
+        <div class="logo">
+            <img src="LG.png" alt="Tina Bakery Logo">
+            <span>TINA Bakery</span>
+        </div>
+        <nav class="nav">
+            <a href="index.html">Trang chủ</a>
+            <a href="sanpham.html" class="active">Thực đơn</a>
+            <a href="cart.html">Giỏ hàng (<span id="cartCount">0</span>)</a>
+            <a href="lienhe.html">Liên hệ</a>
+        </nav>
+    </header>
+
+    <!-- 🍵 HERO -->
+    <section class="page-hero bg" style="background-image: url('https://horecavn.com/wp-content/uploads/2024/05/bi-quyet-chup-anh-do-uong-bat-mat-khong-ton-nhieu-chi-phi_20240526184551.jpg');">
+        <h1>Trà & Thức Uống</h1>
+        <p>Thanh mát – tự nhiên – tươi mới mỗi ngày tại TINA Bakery.</p>
+    </section>
+
+    <!-- ☕ DANH SÁCH TRÀ -->
+    <section class="menu-section">
+        <h2>Các Loại Trà & Thức Uống</h2>
+        <div class="menu-grid" id="tea-list"></div>
+    </section>
+
+    <!-- 💖 FOOTER -->
+    <footer class="footer">
+        <div>
+            <h3>TINA Bakery</h3>
+            <p>Bánh tươi mỗi ngày – đậm hương vị yêu thương.</p>
+        </div>
+
+        <div>
+            <h3>Bakery</h3>
+            <a href="banhmi.html">Bánh mì</a>
+            <a href="banhkem.html">Bánh kem</a>
+            <a href="pastry.html">Pastry</a>
+        </div>
+
+        <div>
+            <h3>Beverages</h3>
+            <a href="caffe.html">Coffee</a>
+            <a href="tra.html">Tea</a>
+            <a href="sinhto.html">Smoothies</a>
+        </div>
+
+        <div>
+            <h3>Theo dõi chúng tôi</h3>
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.tiktok.com/">TikTok</a>
+        </div>
+
+        <div>
+            <h3>Liên hệ</h3>
+            <p><strong>Địa chỉ:</strong> 123 Đường Hoa Hồng, Quận 3, TP. Hồ Chí Minh</p>
+            <p><strong>Hotline:</strong> 0901 234 567</p>
+            <p><strong>Email:</strong> tinabakery@gmail.com</p>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 TINA Bakery | Designed with 💖 by Nguyen Minh Phuong
+        </div>
+    </footer>
+
+
+    <script>
+        // 🍵 Danh sách Trà & Thức uống
+        const teas = [{
+            name: "Trà Hoa Cúc Mật Ong",
+            img: "https://www.huongnghiepaau.com/wp-content/uploads/2021/07/uong-tra-hoa-cuc.jpg",
+            desc: "Trà hoa cúc thanh nhẹ kết hợp mật ong ngọt dịu – giúp thư giãn và an thần.",
+            price: 45000
+        }, {
+            name: "Trà Dâu Tươi",
+            img: "https://cdn.tgdd.vn/2021/03/CookRecipe/GalleryStep/thanh-pham-1195.jpg",
+            desc: "Trà đen ủ lạnh kết hợp dâu tươi chua ngọt – hương vị trẻ trung, mát lành.",
+            price: 48000
+        }, {
+            name: "Trà Sữa Matcha",
+            img: "https://hachihachi.com.vn/Uploads/_6/CMS/Blog/AmThuc/2025/T2/tra-sua-matcha.jpg",
+            desc: "Matcha Nhật Bản nguyên chất hòa cùng sữa tươi béo nhẹ – thơm dịu và tinh tế.",
+            price: 49000
+        }, {
+            name: "Trà Đào Cam Sả",
+            img: "https://dayphache.edu.vn/wp-content/uploads/2024/06/cach-lam-tra-dao.jpg",
+            desc: "Trà đào tươi mát hòa quyện cùng cam và sả – mang đến cảm giác sảng khoái.",
+            price: 52000
+        }, {
+            name: "Nước Ép Cam Tươi",
+            img: "https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/nuoc_ep_cam_dua_9_3c1e453889.jpg",
+            desc: "Cam tươi vắt nguyên chất, giữ trọn vitamin C – cho ngày mới đầy năng lượng.",
+            price: 50000
+        }];
+
+        const list = document.getElementById("tea-list");
+
+        // ✅ Hiển thị danh sách trà
+        teas.forEach((item) => {
+            const card = document.createElement("div");
+            card.className = "menu-card fade-in";
+            card.innerHTML = `
+        <img src="${item.img}" alt="${item.name}">
+        <h3>${item.name}</h3>
+        <p>${item.desc}</p>
+        <p class="price">${item.price.toLocaleString()} ₫</p>
+        <button class="btn add-to-cart"
+          data-name="${item.name}"
+          data-price="${item.price}"
+          data-img="${item.img}">
+          🧺 Thêm vào giỏ hàng
+        </button>
+      `;
+            list.appendChild(card);
+        });
+    </script>
+</body>
+
+</html>

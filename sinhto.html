@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinh Tố & Blended Drinks – TINA Bakery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- 🧁 HEADER -->
+    <header class="header">
+        <div class="logo">
+            <img src="LG.png" alt="Tina Bakery Logo">
+            <span>TINA Bakery</span>
+        </div>
+        <nav class="nav">
+            <a href="index.html">Trang chủ</a>
+            <a href="sanpham.html" class="active">Thực đơn</a>
+            <a href="cart.html">Giỏ hàng (<span id="cartCount">0</span>)</a>
+            <a href="lienhe.html">Liên hệ</a>
+        </nav>
+    </header>
+
+    <!-- 🍓 HERO -->
+    <section class="page-hero bg" style="background-image: url('https://media.istockphoto.com/id/540519504/vi/anh/sinh-t%E1%BB%91-t%C6%B0%C6%A1i-trong-ly.jpg?s=612x612&w=0&k=20&c=k24CBkZEsD2yhbVVtZ5zBitFdBd-OVVMfDxGd-7zzLY=');">
+        <h1>Sinh Tố & Blended Drinks</h1>
+        <p>Trái cây tươi xay nhuyễn – mát lạnh, thơm ngon và tràn đầy năng lượng.</p>
+    </section>
+
+    <!-- 🥤 DANH SÁCH SINH TỐ -->
+    <section class="menu-section">
+        <h2>Các Loại Sinh Tố</h2>
+        <div class="menu-grid" id="smoothie-list"></div>
+    </section>
+
+    <!-- 💖 FOOTER -->
+    <footer class="footer">
+        <div>
+            <h3>TINA Bakery</h3>
+            <p>Bánh tươi mỗi ngày – đậm hương vị yêu thương.</p>
+        </div>
+
+        <div>
+            <h3>Bakery</h3>
+            <a href="banhmi.html">Bánh mì</a>
+            <a href="banhkem.html">Bánh kem</a>
+            <a href="pastry.html">Pastry</a>
+        </div>
+
+        <div>
+            <h3>Beverages</h3>
+            <a href="caffe.html">Coffee</a>
+            <a href="tra.html">Tea</a>
+            <a href="sinhto.html">Smoothies</a>
+        </div>
+
+        <div>
+            <h3>Theo dõi chúng tôi</h3>
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.tiktok.com/">TikTok</a>
+        </div>
+
+        <div>
+            <h3>Liên hệ</h3>
+            <p><strong>Địa chỉ:</strong> 123 Đường Hoa Hồng, Quận 3, TP. Hồ Chí Minh</p>
+            <p><strong>Hotline:</strong> 0901 234 567</p>
+            <p><strong>Email:</strong> tinabakery@gmail.com</p>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 TINA Bakery | Designed with 💖 by Nguyen Minh Phuong
+        </div>
+    </footer>
+
+
+    <script>
+        // 🍓 Danh sách sinh tố
+        const smoothies = [{
+            name: "Sinh Tố Dâu Tươi",
+            img: "https://cdn.tgdd.vn/2021/03/CookRecipe/GalleryStep/thanh-pham-756.jpg",
+            desc: "Dâu tươi xay nhuyễn cùng sữa chua và đá mịn – mát lạnh, ngọt thanh tự nhiên.",
+            price: 55000
+        }, {
+            name: "Sinh Tố Xoài",
+            img: "https://dayphache.edu.vn/wp-content/uploads/2016/02/cach-lam-sinh-to-xoai-sua-dac.jpg",
+            desc: "Xoài chín vàng thơm dịu, hòa quyện cùng sữa đặc và đá lạnh – vị nhiệt đới cuốn hút.",
+            price: 52000
+        }, {
+            name: "Sinh Tố Chuối Cacao",
+            img: "https://cdn.tgdd.vn/2021/10/CookRecipe/Avatar/sinh-to-chuoi-ca-cao-thumbnail.jpg",
+            desc: "Chuối chín kết hợp cacao nguyên chất, mang vị ngọt béo đậm đà và ấm áp.",
+            price: 58000
+        }, {
+            name: "Sinh Tố Việt Quất",
+            img: "https://www.huongnghiepaau.com/wp-content/uploads/2016/10/sinh-to-viet-quat-vua-dep-mat-vua-ngon.jpg",
+            desc: "Việt quất tươi mát, xay cùng sữa tươi thanh nhẹ – vị chua ngọt hài hòa, hấp dẫn.",
+            price: 60000
+        }, {
+            name: "Sinh Tố Bơ Sữa",
+            img: "https://cookbeo.com/media/2021/06/sinh-to-bo/sinh-to-bo.jpg",
+            desc: "Bơ Đà Lạt béo ngậy, quyện cùng sữa đặc – thơm, sánh mịn và ngọt ngào.",
+            price: 59000
+        }];
+
+        const list = document.getElementById("smoothie-list");
+
+        // ✅ Hiển thị danh sách sinh tố
+        smoothies.forEach((item) => {
+            const card = document.createElement("div");
+            card.className = "menu-card fade-in";
+            card.innerHTML = `
+        <img src="${item.img}" alt="${item.name}">
+        <h3>${item.name}</h3>
+        <p>${item.desc}</p>
+        <p class="price">${item.price.toLocaleString()} ₫</p>
+        <button class="btn add-to-cart"
+          data-name="${item.name}"
+          data-price="${item.price}"
+          data-img="${item.img}">
+          🧺 Thêm vào giỏ hàng
+        </button>
+      `;
+            list.appendChild(card);
+        });
+    </script>
+</body>
+
+</html>

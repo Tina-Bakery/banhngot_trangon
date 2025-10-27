@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng – TINA Bakery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- 🧁 HEADER -->
+    <header class="header">
+        <div class="logo">
+            <img src="LG.png" alt="Tina Bakery Logo">
+            <span>TINA Bakery</span>
+        </div>
+        <nav class="nav">
+            <a href="index.html" class="active">Trang chủ</a>
+            <a href="sanpham.html">Thực đơn</a>
+            <a href="cart.html">Giỏ hàng</a>
+            <a href="lienhe.html">Liên hệ</a>
+        </nav>
+    </header>
+
+    <!-- 🧺 CART -->
+    <section class="cart-section">
+        <h2>🧺 Giỏ hàng của bạn</h2>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+
+        <div class="cart-buttons">
+            <button class="btn" id="clear-cart">🗑️ Xóa toàn bộ</button>
+            <button class="btn" id="thanhtoan-btn">💖 Đặt hàng</button>
+        </div>
+    </section>
+
+    <!-- 🧾 FOOTER -->
+    <footer class="footer">
+        <div>
+            <h3>TINA Bakery</h3>
+            <p>Bánh tươi mỗi ngày – đậm hương vị yêu thương.</p>
+        </div>
+
+        <div>
+            <h3>Bakery</h3>
+            <a href="banhmi.html">Bánh mì</a>
+            <a href="banhkem.html">Bánh kem</a>
+            <a href="pastry.html">Pastry</a>
+        </div>
+
+        <div>
+            <h3>Beverages</h3>
+            <a href="caffe.html">Coffee</a>
+            <a href="tra.html">Tea</a>
+            <a href="sinhto.html">Smoothies</a>
+        </div>
+
+        <div>
+            <h3>Theo dõi chúng tôi</h3>
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.tiktok.com/">TikTok</a>
+        </div>
+
+        <div>
+            <h3>Liên hệ</h3>
+            <p><strong>Địa chỉ:</strong> 123 Đường Hoa Hồng, Quận 3, TP. Hồ Chí Minh</p>
+            <p><strong>Hotline:</strong> 0901 234 567</p>
+            <p><strong>Email:</strong> tinabakery@gmail.com</p>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 TINA Bakery | Designed with 💖 by Nguyen Minh Phuong
+        </div>
+    </footer>
+
+
+    <!-- 💻 SCRIPT GIỎ HÀNG -->
+    <script>
+        // 🛒 Lấy giỏ hàng từ LocalStorage
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartItemsDiv = document.getElementById("cart-items");
+        const cartTotalDiv = document.getElementById("cart-total");
+
+        // 🧁 Hiển thị giỏ hàng
+        function renderCart() {
+            cartItemsDiv.innerHTML = "";
+            let total = 0;
+
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = "<p>Giỏ hàng trống 🍰</p>";
+                cartTotalDiv.innerHTML = "";
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                const price = typeof item.price === "number" ?
+                    item.price :
+                    parseFloat(item.price.replace(/[^\d]/g, ""));
+                const qty = item.qty || 1;
+                total += price * qty;
+
+                cartItemsDiv.innerHTML += `
+          <div class="cart-item">
+            <img src="${item.img}" alt="${item.name}">
+            <div class="info">
+              <h3>${item.name}</h3>
+              <p>${price.toLocaleString()} ₫</p>
+              <div class="quantity">
+                <button class="qty-btn" onclick="changeQty(${index}, -1)">−</button>
+                <span>${qty}</span>
+                <button class="qty-btn" onclick="changeQty(${index}, 1)">+</button>
+              </div>
+            </div>
+            <div class="subtotal">${(price * qty).toLocaleString()} ₫</div>
+            <button class="remove" onclick="removeItem(${index})">Xóa</button>
+          </div>
+        `;
+            });
+
+            cartTotalDiv.innerHTML = `<h3>Tổng cộng: ${total.toLocaleString()} ₫</h3>`;
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+        // 🍞 Tăng / giảm số lượng
+        function changeQty(index, delta) {
+            if (!cart[index].qty) cart[index].qty = 1;
+            cart[index].qty = Math.max(1, cart[index].qty + delta);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            renderCart();
+        }
+
+        // ❌ Xóa 1 sản phẩm
+        function removeItem(i) {
+            cart.splice(i, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            renderCart();
+        }
+
+        // 🗑️ Xóa toàn bộ giỏ hàng
+        document.getElementById("clear-cart").onclick = () => {
+            if (confirm("Bạn có chắc muốn xóa toàn bộ giỏ hàng không?")) {
+                localStorage.removeItem("cart");
+                cart = [];
+                renderCart();
+            }
+        };
+
+        // 💖 Chuyển sang trang thanh toán
+        document.getElementById("thanhtoan-btn").onclick = () => {
+            if (cart.length === 0) {
+                alert("🛒 Giỏ hàng của bạn đang trống!");
+            } else {
+                window.location.href = "thanhtoan.html";
+            }
+        };
+
+        // 🔄 Gọi hàm hiển thị ban đầu
+        renderCart();
+    </script>
+</body>
+
+</html>

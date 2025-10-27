@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán – TINA Bakery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- 🌸 HEADER -->
+    <header class="header">
+        <div class="logo">
+            <img src="LG.png" alt="Tina Bakery Logo">
+            <span>TINA Bakery</span>
+        </div>
+        <nav class="nav">
+            <a href="index.html">Trang chủ</a>
+            <a href="sanpham.html">Thực đơn</a>
+            <a href="cart.html">Giỏ hàng</a>
+            <a href="lienhe.html">Liên hệ</a>
+        </nav>
+    </header>
+
+    <!-- 🧁 FORM THANH TOÁN -->
+    <section class="checkout-section">
+        <h2>Thông tin thanh toán</h2>
+
+        <form id="checkoutForm" class="checkout-form">
+            <label>Họ và tên</label>
+            <input type="text" id="fullname" placeholder="Nhập họ và tên" required>
+
+            <label>Số điện thoại</label>
+            <input type="tel" id="phone" placeholder="Nhập số điện thoại" required>
+
+            <label>Địa chỉ giao hàng</label>
+            <textarea id="address" placeholder="Số nhà, đường, phường/xã, quận/huyện..." required></textarea>
+
+            <h3>Đơn hàng của bạn</h3>
+            <div id="order-summary"></div>
+
+            <button type="submit" class="btn">💖 Xác nhận thanh toán</button>
+        </form>
+    </section>
+
+    <!-- 🎉 POPUP CẢM ƠN -->
+    <div class="thankyou-popup" id="popup">
+        <h3>🎉 Cảm ơn bạn!</h3>
+        <p>Đơn hàng của bạn đã được ghi nhận.</p>
+        <button onclick="closePopup()">Về Trang chủ</button>
+    </div>
+
+    <!-- 🌿 FOOTER -->
+    <footer class="footer">
+        <div>
+            <h3>TINA Bakery</h3>
+            <p>Bánh tươi mỗi ngày – đậm hương vị yêu thương.</p>
+        </div>
+
+        <div>
+            <h3>Bakery</h3>
+            <a href="banhmi.html">Bánh mì</a>
+            <a href="banhkem.html">Bánh kem</a>
+            <a href="pastry.html">Pastry</a>
+        </div>
+
+        <div>
+            <h3>Beverages</h3>
+            <a href="caffe.html">Coffee</a>
+            <a href="tra.html">Tea</a>
+            <a href="sinhto.html">Smoothies</a>
+        </div>
+
+        <div>
+            <h3>Theo dõi chúng tôi</h3>
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.tiktok.com/">TikTok</a>
+        </div>
+
+        <div>
+            <h3>Liên hệ</h3>
+            <p><strong>Địa chỉ:</strong> 123 Đường Hoa Hồng, Quận 3, TP. Hồ Chí Minh</p>
+            <p><strong>Hotline:</strong> 0901 234 567</p>
+            <p><strong>Email:</strong> tinabakery@gmail.com</p>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 TINA Bakery | Designed with 💖 by Nguyen Minh Phuong
+        </div>
+    </footer>
+
+    <!-- ☕ SCRIPT XỬ LÝ -->
+    <script>
+        const CART_KEY = "cart";
+        const ORDER_KEY = "tb_orders";
+
+        // 📦 HÀM ĐỌC & LƯU LOCALSTORAGE
+        function read(key) {
+            try {
+                return JSON.parse(localStorage.getItem(key)) || [];
+            } catch {
+                return [];
+            }
+        }
+
+        function save(key, value) {
+            localStorage.setItem(key, JSON.stringify(value));
+        }
+
+        // 🧾 HIỂN THỊ ĐƠN HÀNG
+        const cart = read(CART_KEY);
+        const orderDiv = document.getElementById("order-summary");
+        const popup = document.getElementById("popup");
+
+        function renderOrder() {
+            if (cart.length === 0) {
+                orderDiv.innerHTML = "<p>Không có sản phẩm nào trong giỏ hàng 🍰</p>";
+                return;
+            }
+
+            let total = 0;
+            let html = "<ul>";
+
+            cart.forEach(item => {
+                const price = typeof item.price === "number" ?
+                    item.price :
+                    parseFloat(item.price.replace(/[^\d]/g, "")) || 0;
+                const qty = item.qty || 1;
+                const sum = price * qty;
+                total += sum;
+                html += `<li>${item.name} × ${qty} — ${sum.toLocaleString()} ₫</li>`;
+            });
+
+            html += `</ul><p><strong>Tổng cộng:</strong> ${total.toLocaleString()} ₫</p>`;
+            orderDiv.innerHTML = html;
+        }
+
+        renderOrder();
+
+        // 🍰 XỬ LÝ THANH TOÁN
+        document.getElementById("checkoutForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById("fullname").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const addr = document.getElementById("address").value.trim();
+
+            if (!name || !phone || !addr) {
+                alert("⚠️ Vui lòng nhập đầy đủ thông tin!");
+                return;
+            }
+
+            if (cart.length === 0) {
+                alert("🛒 Giỏ hàng của bạn đang trống!");
+                return;
+            }
+
+            const order = {
+                id: "TB" + Date.now(),
+                at: new Date().toLocaleString("vi-VN"),
+                name,
+                phone,
+                addr,
+                items: cart,
+                total: cart.reduce((s, i) => {
+                    const p = typeof i.price === "number" ? i.price : parseFloat(i.price.replace(/[^\d]/g, "")) || 0;
+                    return s + (p * (i.qty || 1));
+                }, 0),
+                status: "Đang xử lý"
+            };
+
+            const orders = read(ORDER_KEY);
+            orders.push(order);
+            save(ORDER_KEY, orders);
+            localStorage.removeItem(CART_KEY);
+
+            // 🎉 Hiển thị popup cảm ơn
+            document.querySelector("#popup h3").textContent = `🎉 Cảm ơn ${name}!`;
+            document.querySelector("#popup p").innerHTML = `
+        Mã đơn: <strong>${order.id}</strong><br>
+        Tổng tiền: <strong>${order.total.toLocaleString()} ₫</strong><br>
+        Giao đến: <em>${addr}</em>
+      `;
+            popup.classList.add("show");
+        });
+
+        // 🏠 Quay lại Trang chủ
+        function closePopup() {
+            popup.classList.remove("show");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+
+</html>

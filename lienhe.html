@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ – TINA Bakery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 🧁 HEADER -->
+    <header class="header">
+        <div class="logo">
+            <img src="LG.png" alt="Tina Bakery Logo">
+            <span>TINA Bakery</span>
+        </div>
+        <nav class="nav">
+            <a href="index.html">Trang chủ</a>
+            <a href="sanpham.html">Thực đơn</a>
+            <a href="cart.html">Giỏ hàng</a>
+            <a href="lienhe.html" class="active">Liên hệ</a>
+        </nav>
+    </header>
+
+    <!-- 🌸 HERO -->
+    <section class="contact-hero">
+        <div class="overlay">
+            <h1>Liên Hệ Với TINA Bakery</h1>
+            <p>Chúng tôi luôn sẵn sàng lắng nghe bạn 💕</p>
+        </div>
+    </section>
+
+    <!-- 💬 FORM & THÔNG TIN -->
+    <section class="contact-section">
+        <div class="contact-container">
+
+            <div class="contact-info">
+                <h2>Thông tin liên hệ</h2>
+                <p><strong>📍 Địa chỉ:</strong> 123 Nguyễn Thị Minh Khai, Quận 3, TP. Hồ Chí Minh</p>
+                <p><strong>📞 Điện thoại:</strong> 0909 888 123</p>
+                <p><strong>📧 Email:</strong> tinabakery@gmail.com</p>
+                <p><strong>🕒 Giờ mở cửa:</strong> 7:00 – 21:00 (Thứ 2 – Chủ Nhật)</p>
+            </div>
+
+            <div class="contact-form">
+                <h2>Gửi tin nhắn cho chúng tôi</h2>
+                <form id="contactForm">
+                    <input type="text" id="name" placeholder="Họ và tên" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="text" id="subject" placeholder="Chủ đề" required>
+                    <textarea id="message" placeholder="Nội dung tin nhắn..." rows="5" required></textarea>
+                    <button type="submit" class="btn">📩 Gửi tin nhắn</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🗺️ GOOGLE MAP -->
+    <section class="map-section">
+        <h2>📍 Vị trí của chúng tôi</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.429747256195!2d106.69313347481837!3d10.77733658937171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3b99f5b3b7%3A0x5a70c9859129eb9b!2zMTIzIE5ndXnhu4VuIFRow6FpIE1pbmggS2hhaSwgUGjGsOG7nW5nIDMsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCA3MjAwMCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1700135812345!5m2!1svi!2s"
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+    </section>
+
+    <!-- 🌿 FOOTER -->
+    <footer class="footer">
+        <div>
+            <h3>TINA Bakery</h3>
+            <p>Bánh tươi mỗi ngày – đậm hương vị yêu thương.</p>
+        </div>
+
+        <div>
+            <h3>Bakery</h3>
+            <a href="banhmi.html">Bánh mì</a>
+            <a href="banhkem.html">Bánh kem</a>
+            <a href="pastry.html">Pastry</a>
+        </div>
+
+        <div>
+            <h3>Beverages</h3>
+            <a href="caffe.html">Coffee</a>
+            <a href="tra.html">Tea</a>
+            <a href="sinhto.html">Smoothies</a>
+        </div>
+
+        <div>
+            <h3>Theo dõi chúng tôi</h3>
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.tiktok.com/">TikTok</a>
+        </div>
+
+        <div>
+            <h3>Liên hệ</h3>
+            <p><strong>Địa chỉ:</strong> 123 Đường Hoa Hồng, Quận 3, TP. Hồ Chí Minh</p>
+            <p><strong>Hotline:</strong> 0901 234 567</p>
+            <p><strong>Email:</strong> tinabakery@gmail.com</p>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 TINA Bakery | Designed with 💖 by Nguyen Minh Phuong
+        </div>
+    </footer>
+
+
+    <!-- ✉️ SCRIPT -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            alert(`💌 Cảm ơn ${name}! Tin nhắn của bạn đã được gửi thành công.`);
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>

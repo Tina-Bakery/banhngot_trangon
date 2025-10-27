@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastry & Pie – TINA Bakery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- 🧁 HEADER -->
+    <header class="header">
+        <div class="logo">
+            <img src="LG.png" alt="Tina Bakery Logo">
+            <span>TINA Bakery</span>
+        </div>
+        <nav class="nav">
+            <a href="index.html">Trang chủ</a>
+            <a href="sanpham.html" class="active">Thực đơn</a>
+            <a href="cart.html">Giỏ hàng (<span id="cartCount">0</span>)</a>
+            <a href="lienhe.html">Liên hệ</a>
+        </nav>
+    </header>
+
+    <!-- 🥐 HERO -->
+    <section class="page-hero bg" style="background-image: url('https://www.shutterstock.com/image-photo/closeup-variety-freshly-baked-pastries-600nw-2599222087.jpg');">
+        <h1>Pastry & Pie</h1>
+        <p>Thưởng thức vị giòn tan và hương bơ ngọt ngào – nướng mới mỗi ngày tại TINA Bakery.</p>
+    </section>
+
+    <!-- 🥧 DANH SÁCH PASTRY -->
+    <section class="menu-section">
+        <h2>Các Loại Pastry & Pie</h2>
+        <div class="menu-grid" id="pastry-list"></div>
+    </section>
+
+    <!-- 💖 FOOTER -->
+    <footer class="footer">
+        <div>
+            <h3>TINA Bakery</h3>
+            <p>Bánh tươi mỗi ngày – đậm hương vị yêu thương.</p>
+        </div>
+
+        <div>
+            <h3>Bakery</h3>
+            <a href="banhmi.html">Bánh mì</a>
+            <a href="banhkem.html">Bánh kem</a>
+            <a href="pastry.html">Pastry</a>
+        </div>
+
+        <div>
+            <h3>Beverages</h3>
+            <a href="caffe.html">Coffee</a>
+            <a href="tra.html">Tea</a>
+            <a href="sinhto.html">Smoothies</a>
+        </div>
+
+        <div>
+            <h3>Theo dõi chúng tôi</h3>
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.tiktok.com/">TikTok</a>
+        </div>
+
+        <div>
+            <h3>Liên hệ</h3>
+            <p><strong>Địa chỉ:</strong> 123 Đường Hoa Hồng, Quận 3, TP. Hồ Chí Minh</p>
+            <p><strong>Hotline:</strong> 0901 234 567</p>
+            <p><strong>Email:</strong> tinabakery@gmail.com</p>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 TINA Bakery | Designed with 💖 by Nguyen Minh Phuong
+        </div>
+    </footer>
+
+
+    <script>
+        // 🥐 Danh sách Pastry & Pie
+        const pastries = [{
+            name: "Croissant Bơ Tươi",
+            img: "https://png.pngtree.com/thumb_back/fw800/background/20250702/pngtree-fresh-butter-croissant-with-jam-and-honey-image_17453241.webp",
+            desc: "Bánh croissant ngàn lớp giòn tan, thơm hương bơ Pháp truyền thống.",
+            price: 35000
+        }, {
+            name: "Danish Táo Quế",
+            img: "https://traicayvuongtron.vn/resources/cache/500x500x3/WEBSITE%202023/menu/menubangiaodi/banhtiectra/appledanishmoi/apple-danish%20(1).jpg.webp",
+            desc: "Lớp bánh xốp mềm hòa quyện với nhân táo và quế dịu nhẹ – ngọt ngào chuẩn Âu.",
+            price: 40000
+        }, {
+            name: "Egg Tart Trứng Sữa",
+            img: "https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fill,g_auto,w_1500,ar_3:2/tk%2Fphoto%2F2025%2F06-2025%2F2025-06-pasteis-de-nata%2Fpasteis-de-nata-11",
+            desc: "Vỏ tart vàng giòn, nhân trứng sữa béo mịn tan chảy trong miệng.",
+            price: 30000
+        }, {
+            name: "Blueberry Pie",
+            img: "https://t4.ftcdn.net/jpg/02/82/71/47/360_F_282714756_N8lxmdN5sYXewaJrVqgpqEfbjq6rgyru.jpg",
+            desc: "Bánh pie nhân việt quất ngọt dịu, thơm lừng vị trái cây tươi mới.",
+            price: 45000
+        }, {
+            name: "Apple Pie Mini",
+            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnD_PT6mKVqWRnAfKLv0q3ucOxbYCCIumxEtOMuWFlgoYm9RcBgQWJbvNgg9qeZ3RNj7k&usqp=CAU",
+            desc: "Vỏ giòn, nhân táo tươi trộn mật ong và quế – vị ngọt dịu đậm hương.",
+            price: 42000
+        }];
+
+        const list = document.getElementById("pastry-list");
+
+        // ✅ Hiển thị danh sách bánh
+        pastries.forEach((item) => {
+            const card = document.createElement("div");
+            card.className = "menu-card fade-in";
+            card.innerHTML = `
+        <img src="${item.img}" alt="${item.name}">
+        <h3>${item.name}</h3>
+        <p>${item.desc}</p>
+        <p class="price">${item.price.toLocaleString()} ₫</p>
+        <button class="btn add-to-cart"
+          data-name="${item.name}"
+          data-price="${item.price}"
+          data-img="${item.img}">
+          🧺 Thêm vào giỏ hàng
+        </button>
+      `;
+            list.appendChild(card);
+        });
+    </script>
+</body>
+
+</html>

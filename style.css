@@ -1,0 +1,1446 @@
+/* ==========================
+🎨 TINA BAKERY MASTER STYLE
+Pastel Green Theme
+========================== */
+
+
+/* ==== 🎨 MÀU GỐC (ROOT COLORS) ==== */
+
+:root {
+    --green: #88a996;
+    /* Màu xanh pastel chính */
+    --green-dark: #5f7e6e;
+    /* Màu xanh đậm hơn */
+    --light: #fffaf7;
+    /* Màu nền sáng */
+    --dark: #2f3e46;
+    /* Màu chữ chính */
+    --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    /* Đổ bóng nhẹ */
+}
+
+
+/* ==== 🔄 RESET MẶC ĐỊNH ==== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+
+/* ==========================
+🌿 HEADER TRANG CHÍNH
+========================== */
+
+.header {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 60px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    /* Giữ header cố định trên cùng */
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Playfair Display', serif;
+    color: var(--green);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.logo img {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+}
+
+
+/* ==== 🔗 MENU NAVIGATION ==== */
+
+.nav a {
+    text-decoration: none;
+    color: var(--dark);
+    margin: 0 16px;
+    font-weight: 600;
+    position: relative;
+    transition: 0.2s;
+}
+
+.nav a:hover,
+.nav .active {
+    color: var(--green);
+}
+
+
+/* ==========================
+🎥 HERO SECTION (TRANG CHỦ)
+========================== */
+
+.hero {
+    position: relative;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Lớp phủ hero */
+
+.hero .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-logo {
+    width: 160px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    margin-bottom: 20px;
+}
+
+
+/* ==========================
+🎀 NÚT CHUNG (BUTTON STYLE)
+========================== */
+
+.btn {
+    background: var(--green);
+    border: none;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--green-dark);
+    transform: translateY(-2px);
+}
+
+
+/* ==========================
+🥐 PHẦN GIỚI THIỆU - ABOUT SECTION
+========================== */
+
+.our-story {
+    background-color: #fffdf9;
+    padding: 100px 50px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* ==== Khối chứa hình & text ==== */
+
+.story-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 60px;
+}
+
+
+/* ==== Cột trái: hình ảnh ==== */
+
+.story-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    flex: 1 1 45%;
+}
+
+.story-images img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.story-images img:hover {
+    transform: scale(1.03);
+}
+
+
+/* ==== Cột phải: nội dung văn bản ==== */
+
+.story-text {
+    flex: 1 1 45%;
+    color: #3e3d37;
+}
+
+.story-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: #2e372d;
+    margin-bottom: 15px;
+}
+
+.story-text h4 {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: #8b776a;
+    margin-bottom: 10px;
+}
+
+.story-text h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #3e3d37;
+    margin-bottom: 15px;
+}
+
+.story-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #6a5e58;
+    margin-bottom: 25px;
+}
+
+
+/* Nút viền outline */
+
+.btn-outline {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 2px solid #4a2c2a;
+    color: #4a2c2a;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: #4a2c2a;
+    color: #fff;
+}
+
+
+/* ==========================
+🍰 MENU GRID (INDEX + SANPHAM)
+========================== */
+
+.menu-section {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.menu-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--green);
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+
+/* ==== Lưới sản phẩm ==== */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+
+/* ==== Thẻ sản phẩm ==== */
+
+.menu-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding-bottom: 20px;
+    transition: 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+}
+
+
+/* ==== Hình ảnh sản phẩm ==== */
+
+.menu-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+}
+
+
+/* ==== Tiêu đề và mô tả sản phẩm ==== */
+
+.menu-card h3 {
+    color: var(--green);
+    font-size: 1.3rem;
+    margin-top: 12px;
+}
+
+.menu-card p {
+    color: #555;
+    font-size: 0.95rem;
+    margin: 8px 0;
+}
+
+
+/* ==== Liên kết chi tiết sản phẩm ==== */
+
+.menu-card a {
+    text-decoration: none;
+    color: var(--green);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu-card a:hover {
+    color: var(--dark);
+    text-decoration: underline;
+}
+
+
+/* ==========================
+💌 NEWSLETTER ĐĂNG KÝ EMAIL
+========================== */
+
+.newsletter {
+    background: var(--green);
+    color: #fff;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.newsletter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+}
+
+
+/* ==== Ô nhập và nút đăng ký ==== */
+
+.newsletter input {
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    width: 320px;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.newsletter button {
+    background: #fff;
+    color: var(--green);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 28px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.newsletter button:hover {
+    background: #f3f3f3;
+}
+
+
+/* ==========================
+🛒 GIỎ HÀNG PAGE (CART PAGE)
+========================== */
+
+.cart-section {
+    max-width: 900px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 18px;
+    padding: 40px 50px;
+    box-shadow: var(--shadow);
+}
+
+.cart-section h2 {
+    text-align: center;
+    color: var(--green);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 30px;
+}
+
+
+/* ==== Mỗi item trong giỏ ==== */
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    background: #f8f8f8;
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 16px;
+    transition: 0.2s;
+}
+
+.cart-item:hover {
+    background: #fff6f8;
+    transform: translateY(-3px);
+}
+
+
+/* ==== Hình ảnh sản phẩm trong giỏ ==== */
+
+.cart-item img {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 16px;
+}
+
+
+/* ==== Thông tin sản phẩm ==== */
+
+.cart-item .info {
+    flex: 1;
+}
+
+.cart-item h3 {
+    color: var(--dark);
+    margin-bottom: 4px;
+}
+
+.cart-item p {
+    color: #555;
+}
+
+
+/* ==== Nút xóa sản phẩm ==== */
+
+.remove {
+    background: #e57373;
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.remove:hover {
+    background: #d9534f;
+}
+
+
+/* ==== Tổng tiền ==== */
+
+#cart-total {
+    text-align: right;
+    margin-top: 20px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+
+/* ==========================
+💳 THANH TOÁN PAGE (CHECKOUT)
+========================== */
+
+.checkout-section {
+    max-width: 700px;
+    margin: 80px auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 50px 60px;
+    box-shadow: var(--shadow);
+}
+
+.checkout-section h2 {
+    text-align: center;
+    color: var(--green);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 30px;
+}
+
+
+/* ==== Form nhập thông tin thanh toán ==== */
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.checkout-form input,
+.checkout-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #d9e3d6;
+    background: #f8faf8;
+}
+
+.checkout-form input:focus,
+.checkout-form textarea:focus {
+    border-color: var(--green);
+    outline: none;
+}
+
+
+/* ==== Tiêu đề phụ (Order summary) ==== */
+
+.checkout-form h3 {
+    color: var(--green);
+    font-family: 'Playfair Display', serif;
+    margin-top: 30px;
+}
+
+
+/* ==== Khung tóm tắt đơn hàng ==== */
+
+#order-summary {
+    background: #f9faf9;
+    border-radius: 14px;
+    padding: 16px 22px;
+    margin-top: 10px;
+    color: #555;
+}
+
+
+/* ==========================
+🎁 POPUP CẢM ƠN SAU THANH TOÁN
+========================== */
+
+.thankyou-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+
+/* ==== Hiện popup ==== */
+
+.thankyou-popup.show {
+    display: block;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+/* ==== Nút đóng hoặc tiếp tục ==== */
+
+.thankyou-popup button {
+    margin-top: 20px;
+    background: var(--green);
+    border: none;
+    color: #fff;
+    border-radius: 25px;
+    padding: 10px 22px;
+    cursor: pointer;
+}
+
+.thankyou-popup button:hover {
+    background: var(--green-dark);
+}
+
+
+/* ==========================
+📞 LIÊN HỆ PAGE (CONTACT)
+========================== */
+
+.contact-hero {
+    background: url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    height: 300px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+
+.contact-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.contact-hero .overlay {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ==== Nội dung chính của trang liên hệ ==== */
+
+.contact-section {
+    background: var(--light);
+    padding: 70px 10%;
+}
+
+
+/* ==== Lưới chia phần thông tin và form ==== */
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+
+/* ==== Thông tin liên hệ ==== */
+
+.contact-info,
+.contact-form {
+    background: #fff;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.contact-info h2,
+.contact-form h2 {
+    color: var(--green);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 14px;
+}
+
+
+/* ==== Form nhập thông tin ==== */
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d9e3d6;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+
+/* ==== Bản đồ ==== */
+
+.map-section {
+    text-align: center;
+    padding: 60px 10%;
+    background: #fff;
+}
+
+.map-section h2 {
+    color: var(--green);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+}
+
+
+/* ==========================
+🦶 FOOTER
+========================== */
+
+.footer {
+    background: #fff;
+    border-top: 1px solid #eee;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    padding: 50px 40px;
+}
+
+.footer h3 {
+    color: var(--green);
+    font-family: 'Playfair Display', serif;
+}
+
+
+/* ==== Liên kết trong footer ==== */
+
+.footer a {
+    color: var(--dark);
+    text-decoration: none;
+    margin: 6px 0;
+    display: block;
+    transition: 0.2s;
+}
+
+.footer a:hover {
+    color: var(--green);
+}
+
+
+/* ==== Dòng bản quyền cuối ==== */
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #888;
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+
+/* ==========================
+📱 RESPONSIVE (CHO MOBILE & TABLET)
+========================== */
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+    .about {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-gallery img {
+        width: 100%;
+    }
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    .newsletter form {
+        flex-direction: column;
+    }
+    .newsletter input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .cart-item img {
+        width: 100%;
+        height: 180px;
+        margin-bottom: 10px;
+    }
+    .checkout-section {
+        padding: 30px 20px;
+    }
+}
+
+
+/* ==========================
+🌟 HIỆU ỨNG CUỘN TRANG (SCROLL ANIMATION)
+========================== */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.zoom-in {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.zoom-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* Hiệu ứng hover chung cho các card và section */
+
+.menu-card,
+.about-gallery img,
+.cart-item,
+.contact-info,
+.contact-form {
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover,
+.about-gallery img:hover,
+.cart-item:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ==========================
+🌸 HERO CHUNG CHO TOÀN BỘ TRANG
+========================== */
+
+.page-hero {
+    position: relative;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #2f3e46;
+    background: #fffaf7;
+    padding: 60px 20px;
+}
+
+.page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+    color: #2f3e46;
+}
+
+.page-hero p {
+    font-size: 1.1rem;
+    color: #5f7e6e;
+}
+
+
+/* ==== HERO có ảnh nền ==== */
+
+.page-hero.bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.page-hero.bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.page-hero.bg h1,
+.page-hero.bg p {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+
+
+/* ==========================
+🌿 HERO VIDEO CHO MENU PAGE
+========================== */
+
+.hero {
+    position: relative;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    text-align: center;
+}
+
+.hero .overlay h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    margin-bottom: 12px;
+}
+
+.hero .overlay p {
+    font-size: 1.2rem;
+    max-width: 700px;
+}
+
+
+/* ==========================
+🎄 POPUP NHIỀU ƯU ĐÃI GIÁNG SINH
+========================== */
+
+
+/* 🌿 Nền popup xanh pastel */
+
+.promo-popup {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 9999;
+}
+
+.promo-popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ==== Khung nội dung popup ==== */
+
+.promo-content.christmas {
+    background: linear-gradient(180deg, #f0fff8 0%, #e2f8f2 100%);
+    border: 2px solid #c7e9df;
+    border-radius: 20px;
+    max-width: 640px;
+    width: 90%;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: zoomIn 0.5s ease;
+}
+
+
+/* Hiệu ứng zoom hiện popup */
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* ==== Slide trong popup ==== */
+
+.promo-slide {
+    display: none;
+}
+
+.promo-slide.active {
+    display: block;
+}
+
+.promo-slide img {
+    width: 105%;
+    height: 350px;
+    object-fit: cover;
+}
+
+
+/* ==== Nội dung văn bản trong slide ==== */
+
+.promo-text {
+    padding: 30px 35px 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.promo-text h3 {
+    font-family: 'Playfair Display', serif;
+    color: #3a7565;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.promo-text p {
+    color: #4a3c35;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+
+/* ==== Nút “Đặt ngay” Giáng sinh ==== */
+
+.btn-xmas {
+    display: inline-block;
+    background: linear-gradient(90deg, #4caf93, #6bc9a9);
+    color: #fff;
+    padding: 10px 28px;
+    font-weight: 600;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-xmas:hover {
+    background: linear-gradient(90deg, #3fa585, #5cc7a2);
+}
+
+
+/* ==== Nút điều hướng < > ==== */
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #4a8b7a;
+    padding: 5px 12px;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #a7e6cf;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+/* ==== Nút đóng popup ==== */
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #4a8b7a;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #3a7565;
+}
+
+
+/* ==== Nút quà góc phải (Hiện popup) ==== */
+
+.gift-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: linear-gradient(135deg, #78c5ae, #a8e0c5);
+    color: white;
+    font-size: 1.8rem;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 9998;
+    animation: wiggle 4s infinite;
+}
+
+.gift-btn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ==== Hiệu ứng rung nhẹ cho nút quà ==== */
+
+@keyframes wiggle {
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+    10% {
+        transform: rotate(10deg);
+    }
+    20% {
+        transform: rotate(-10deg);
+    }
+}
+
+
+/*====THONGBAOTHEMVAOGIO=====
+/* 🔔 TOAST THÔNG BÁO ĐẸP */
+
+.toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: var(--green-dark);
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.4s ease;
+    z-index: 9999;
+    font-family: 'Poppins', sans-serif;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast.success {
+    background: var(--green-dark);
+}
+
+.toast.error {
+    background: #d9534f;
+}
+
+
+/*=====GIANG SINH======*/
+
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: #79737b;
+    pointer-events: none;
+    animation: fall linear forwards;
+    z-index: 9999;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+.our-story {
+    text-align: center;
+    padding: 80px 100px;
+    background: var(--light);
+}
+
+.story-list {
+    padding: 60px 80px;
+    background: var(--light);
+}
+
+.story-item {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 60px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    padding: 20px 30px;
+}
+
+.story-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.story-item img {
+    width: 320px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.story-content h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark);
+}
+
+.story-content p {
+    color: #444;
+    line-height: 1.6;
+}
+
+.story-content .price {
+    color: var(--green-dark);
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+@media(max-width:768px) {
+    .story-item,
+    .story-item.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+    .story-item img {
+        width: 100%;
+    }
+}
+
+
+/* 🎁 Hộp quà mở lại popup */
+
+#giftBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 25px;
+    background: #b72d2d;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+#giftBtn.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#giftBtn:hover {
+    transform: scale(1.1);
+    background: #a02020;
+}
+
+
+/* ===============================
+   🎁 HIỆU ỨNG HỘP QUÀ GROOTTO CAFE
+   =============================== */
+
+
+/* Vị trí & kiểu cơ bản của nút quà */
+
+#giftBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 25px;
+    background: #67cbb4;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+
+/* Khi hiển thị (popup đóng) thì rung nhẹ liên tục */
+
+#giftBtn.visible {
+    opacity: 1;
+    pointer-events: auto;
+    animation: shakeGift 1s ease-in-out infinite;
+}
+
+
+/* Khi rê chuột vào thì phóng to chút cho vui */
+
+#giftBtn:hover {
+    transform: scale(1.15);
+    background: #900c0c;
+}
+
+
+/* 🔄 Animation rung nhẹ */
+
+@keyframes shakeGift {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(-12deg);
+    }
+    40% {
+        transform: rotate(12deg);
+    }
+    60% {
+        transform: rotate(-10deg);
+    }
+    80% {
+        transform: rotate(10deg);
+    }
+}
+
+
+/* ===============================
+📱 RESPONSIVE NÂNG CAO CHO MOBILE & TABLET
+=============================== */
+
+@media (max-width: 992px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 25px;
+    }
+    .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .story-container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    .story-images {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .newsletter input {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+    .newsletter button {
+        width: 100%;
+    }
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+    }
+    .promo-content.christmas {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh;
+    }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    .hero .overlay p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+    .story-item,
+    .story-item.reverse {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .story-item img {
+        width: 100%;
+        height: auto;
+    }
+    .cart-section,
+    .checkout-section {
+        padding: 25px 18px;
+        margin: 40px 10px;
+    }
+    .promo-slide img {
+        height: 240px;
+    }
+    .promo-text h3 {
+        font-size: 1.2rem;
+    }
+    .promo-text p {
+        font-size: 0.95rem;
+    }
+    #giftBtn {
+        width: 52px;
+        height: 52px;
+        font-size: 22px;
+        bottom: 20px;
+        right: 20px;
+    }
+    .nav-btn {
+        font-size: 1.5rem;
+        padding: 3px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 36px;
+        height: 36px;
+    }
+    .logo {
+        font-size: 1.2rem;
+    }
+    .menu-section h2 {
+        font-size: 1.6rem;
+    }
+    .menu-card h3 {
+        font-size: 1.1rem;
+    }
+    .footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .newsletter h2 {
+        font-size: 1.4rem;
+    }
+    .promo-content.christmas {
+        padding: 20px;
+        border-radius: 15px;
+    }
+    .promo-slide img {
+        height: 200px;
+    }
+    .promo-text {
+        padding: 20px;
+    }
+    #giftBtn {
+        bottom: 15px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bánh Mì – TINA Bakery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- 🧁 HEADER -->
+    <header class="header">
+        <div class="logo">
+            <img src="LG.png" alt="Tina Bakery Logo">
+            <span>TINA Bakery</span>
+        </div>
+        <nav class="nav">
+            <a href="index.html">Trang chủ</a>
+            <a href="sanpham.html" class="active">Thực đơn</a>
+            <a href="cart.html">Giỏ hàng (<span id="cartCount">0</span>)</a>
+            <a href="lienhe.html">Liên hệ</a>
+        </nav>
+    </header>
+
+    <!-- 🥖 HERO -->
+    <section class="page-hero bg" style="background-image: url('https://daylambanh.edu.vn/wp-content/uploads/2019/06/cac-loai-banh-mi.jpg');">
+        <h1>Bánh Mì Tươi</h1>
+        <p>Giòn rụm – thơm bơ – nướng mới mỗi sáng tại TINA Bakery.</p>
+    </section>
+
+    <!-- 🍞 DANH SÁCH BÁNH MÌ -->
+    <section class="menu-section">
+        <h2>Các Loại Bánh Mì</h2>
+        <div class="menu-grid" id="bread-list"></div>
+    </section>
+
+    <footer class="footer">
+        <div>
+            <h3>TINA Bakery</h3>
+            <p>Bánh tươi mỗi ngày – đậm hương vị yêu thương.</p>
+        </div>
+
+        <div>
+            <h3>Bakery</h3>
+            <a href="banhmi.html">Bánh mì</a>
+            <a href="banhkem.html">Bánh kem</a>
+            <a href="pastry.html">Pastry</a>
+        </div>
+
+        <div>
+            <h3>Beverages</h3>
+            <a href="caffe.html">Coffee</a>
+            <a href="tra.html">Tea</a>
+            <a href="sinhto.html">Smoothies</a>
+        </div>
+
+        <div>
+            <h3>Theo dõi chúng tôi</h3>
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.tiktok.com/">TikTok</a>
+        </div>
+
+        <div>
+            <h3>Liên hệ</h3>
+            <p><strong>Địa chỉ:</strong> 123 Đường Hoa Hồng, Quận 3, TP. Hồ Chí Minh</p>
+            <p><strong>Hotline:</strong> 0901 234 567</p>
+            <p><strong>Email:</strong> tinabakery@gmail.com</p>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 TINA Bakery | Designed with 💖 by Nguyen Minh Phuong
+        </div>
+    </footer>
+
+
+    <script>
+        // 🥖 Danh sách bánh mì
+        const breads = [{
+            name: "Bánh Mì Truyền Thống",
+            img: "https://media.vov.vn/sites/default/files/styles/large/public/2024-12/cach_an_banh_mi_1.jpg",
+            desc: "Vỏ giòn, ruột mềm, nhân chả lụa & pate đặc trưng – món ăn sáng quen thuộc của người Việt.",
+            price: 25000
+        }, {
+            name: "Bánh Mì Phô Mai Bơ Tỏi",
+            img: "https://www.lorca.vn/wp-content/uploads/2021/10/Cach-lam-mong-banh-mi-bo-toi-phomai-bang-lo-nuong.jpg",
+            desc: "Phô mai tan chảy quyện cùng bơ tỏi thơm lừng, hương vị béo ngậy khó cưỡng.",
+            price: 30000
+        }, {
+            name: "Bánh Mì Chà Bông",
+            img: "https://www.lottemart.vn/media/catalog/product/cache/0x0/0/4/0400260290003.jpg.webp",
+            desc: "Bánh mì mềm mịn kết hợp lớp chà bông mằn mặn hấp dẫn, phù hợp mọi lứa tuổi.",
+            price: 28000
+        }, {
+            name: "Bánh Mì Trứng Muối",
+            img: "https://cdn.happie.vn/photos/4/2/8/4280b677-77df-4dfd-bea4-9b65e341bb98-origin.jpeg",
+            desc: "Bánh thơm mềm, nhân phô mai trứng muối tan chảy – sự kết hợp hoàn hảo.",
+            price: 32000
+        }, {
+            name: "Bánh Mì Ngũ Cốc",
+            img: "https://png.pngtree.com/thumb_back/fw800/background/20220830/pngtree-bread-cereal-goods-nutrition-photo-image_1107870.jpg",
+            desc: "Bánh mì nguyên cám với hạt óc chó, hạnh nhân và yến mạch – lựa chọn healthy mỗi ngày.",
+            price: 38000
+        }];
+
+        const list = document.getElementById("bread-list");
+
+        // ✅ Hiển thị danh sách bánh mì
+        breads.forEach((item) => {
+            const card = document.createElement("div");
+            card.className = "menu-card fade-in";
+            card.innerHTML = `
+        <img src="${item.img}" alt="${item.name}">
+        <h3>${item.name}</h3>
+        <p>${item.desc}</p>
+        <p class="price">${item.price.toLocaleString()} ₫</p>
+        <button class="btn add-to-cart"
+          data-name="${item.name}"
+          data-price="${item.price}"
+          data-img="${item.img}">
+          🧺 Thêm vào giỏ hàng
+        </button>
+      `;
+            list.appendChild(card);
+        });
+    </script>
+</body>
+
+</html>
