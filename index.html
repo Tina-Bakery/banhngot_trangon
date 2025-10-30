@@ -55,11 +55,9 @@
 
     <!-- 🌿 HERO VIDEO -->
     <section class="hero">
-        <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="hinh/LG.png">
-            <source src="video/trangchu.mp4" type="video/mp4">
-            Trình duyệt của bạn không hỗ trợ video.
-        </video>
-
+        <video class="hero-video" autoplay muted loop playsinline webkit-playsinline x5-playsinline preload="auto" poster="hinh/LG.png" id="heroVideo">
+    <source src="video/trangchu.mp4" type="video/mp4">
+</video>
         <div class="overlay">
             <img src="hinh/LG.png" alt="Tina Bakery Logo" class="hero-logo">
             <h1>Freshly Baked, Everyday</h1>
@@ -231,6 +229,22 @@
             clearInterval(autoSlideInterval);
         }
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('heroVideo');
+            if (video) {
+                video.play().catch(() => {
+                    // Nếu Safari vẫn chặn, khi người dùng chạm vào màn hình thì phát
+                    document.body.addEventListener('touchstart', () => {
+                        video.play();
+                    }, {
+                        once: true
+                    });
+                });
+            }
+        });
+    </script>
+
 </body>
 
 </html>
