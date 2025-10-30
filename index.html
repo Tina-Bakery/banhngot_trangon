@@ -16,51 +16,22 @@
     <!-- 🔗 LINK CHÍNH -->
     <link rel="canonical" href="https://tina-bakery.github.io/banhngot-trangon/">
 
-    <!-- 🪪 OPEN GRAPH (FACEBOOK) -->
+    <!-- 🪪 OPEN GRAPH (FACEBOOK PREVIEW) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="TINA Bakery – Freshly Baked Everyday">
-    <meta property="og:description" content="Thưởng thức bánh tươi handmade, cà phê, và ưu đãi Giáng Sinh tại TINA Bakery.">
-    <meta property="og:image" content="https://cdn.tgdd.vn/2020/10/CookProduct/0.-1200x674.jpg">
-    <meta property="og:url" content="https://tina-bakery.github.io/banhngot-trangon/">
+    <meta property="og:description" content="TINA Bakery – tiệm bánh handmade tại Quận 3, TP.HCM. Bánh mì, bánh kem, cà phê và bộ sưu tập Giáng Sinh 2025 với ưu đãi hấp dẫn.">
+    <meta property="og:image" content="https://banhkemhannie.com/wp-content/uploads/2023/11/2.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://tina-bakery.github.io/banhngot_trangon/index.html">
     <meta property="og:site_name" content="TINA Bakery">
 
     <!-- 🐦 TWITTER CARD -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="TINA Bakery – Freshly Baked Everyday">
     <meta name="twitter:description" content="Tiệm bánh handmade với bánh mì, bánh kem, cà phê và trà. Ưu đãi mùa lễ hội cực hấp dẫn!">
-    <meta name="twitter:image" content="https://cdn.tgdd.vn/2020/10/CookProduct/0.-1200x674.jpg">
-
-    <!-- 🗺️ LOCAL SEO -->
-    <meta name="geo.region" content="VN-HCM">
-    <meta name="geo.placename" content="TINA Bakery - Quận 3, TP. Hồ Chí Minh">
-    <meta name="geo.position" content="10.781;106.695">
-    <meta name="ICBM" content="10.781,106.695">
-
-    <!-- 🧁 SCHEMA DỮ LIỆU DOANH NGHIỆP -->
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Bakery",
-            "name": "TINA Bakery",
-            "image": "https://cdn.tgdd.vn/2020/10/CookProduct/0.-1200x674.jpg",
-            "description": "Tiệm bánh handmade TINA Bakery – bánh mì, bánh kem, pastry và đồ uống tươi mới mỗi ngày.",
-            "priceRange": "50000-300000 VND",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "123 Đường Hoa Hồng, Quận 3",
-                "addressLocality": "TP. Hồ Chí Minh",
-                "addressCountry": "VN"
-            },
-            "telephone": "+84-901-234-567",
-            "email": "tinabakery@gmail.com",
-            "url": "https://tina-bakery.github.io/banhngot-trangon/",
-            "sameAs": [
-                "https://www.facebook.com/",
-                "https://www.instagram.com/",
-                "https://www.tiktok.com/"
-            ]
-        }
-    </script>
+    <meta name="twitter:image" content="https://banhkemhannie.com/wp-content/uploads/2023/11/2.jpg">
 
     <!-- 💅 FONT & CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
@@ -84,10 +55,10 @@
 
     <!-- 🌿 HERO VIDEO -->
     <section class="hero">
-        <video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="hinh/LG.png" class="hero-video">
-    <source src="video/trangchu.mp4" type="video/mp4">
-    Trình duyệt của bạn không hỗ trợ video.
-  </video>
+        <video class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="hinh/LG.png">
+            <source src="video/trangchu.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ video.
+        </video>
 
         <div class="overlay">
             <img src="hinh/LG.png" alt="Tina Bakery Logo" class="hero-logo">
@@ -227,17 +198,9 @@
         window.addEventListener("load", () => {
             const popup = document.getElementById("xmasPopup");
             const giftBtn = document.getElementById("giftBtn");
-            const isShown = localStorage.getItem("xmasShown");
 
-            if (!isShown) {
-                setTimeout(() => {
-                    popup.classList.add("show");
-                    startAutoSlide();
-                    localStorage.setItem("xmasShown", "true");
-                }, 1200);
-            } else {
-                giftBtn.classList.add("visible");
-            }
+            // 🎁 Luôn hiển thị nút quà mỗi lần mở trang
+            giftBtn.classList.add("visible");
         });
 
         function openPopup() {
