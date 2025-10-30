@@ -55,14 +55,22 @@
 
     <!-- 🌿 HERO VIDEO -->
     <section class="hero">
-        <video class="hero-video" autoplay muted loop playsinline webkit-playsinline x5-playsinline preload="auto" poster="hinh/LG.png" id="heroVideo">
+        <video id="heroVideo" class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="hinh/LG.png" style="object-fit: cover; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: -1;">
     <source src="video/trangchu.mp4" type="video/mp4">
-</video>
+  </video>
+
         <div class="overlay">
             <img src="hinh/LG.png" alt="Tina Bakery Logo" class="hero-logo">
             <h1>Freshly Baked, Everyday</h1>
             <a href="sanpham.html" class="btn">Khám phá thực đơn</a>
         </div>
+    </section>
+
+    <div class="overlay">
+        <img src="hinh/LG.png" alt="Tina Bakery Logo" class="hero-logo">
+        <h1>Freshly Baked, Everyday</h1>
+        <a href="sanpham.html" class="btn">Khám phá thực đơn</a>
+    </div>
     </section>
 
     <!-- 🥐 CÂU CHUYỆN -->
@@ -230,21 +238,16 @@
         }
     </script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.getElementById('heroVideo');
+        document.addEventListener("DOMContentLoaded", function() {
+            const video = document.getElementById("heroVideo");
             if (video) {
-                video.play().catch(() => {
-                    // Nếu Safari vẫn chặn, khi người dùng chạm vào màn hình thì phát
-                    document.body.addEventListener('touchstart', () => {
-                        video.play();
-                    }, {
-                        once: true
-                    });
+                video.load(); // tải sẵn
+                video.addEventListener('canplaythrough', () => {
+                    video.play().catch(() => {});
                 });
             }
         });
     </script>
-
 </body>
 
 </html>

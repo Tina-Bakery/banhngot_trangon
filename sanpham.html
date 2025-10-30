@@ -27,9 +27,9 @@
 
     <!-- 🍞 HERO VIDEO -->
     <section class="hero">
-        <video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="hinh/LG.png" class="hero-video">
-    <source src="video/menu.mp4" type="video/mp4">
-    Trình duyệt của bạn không hỗ trợ video.
+        <video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="hinh/LG.png" class="hero-video" id="menuVideo">
+      <source src="video/menu.mp4" type="video/mp4">
+      Trình duyệt của bạn không hỗ trợ video.
   </video>
 
         <div class="overlay">
@@ -123,6 +123,18 @@
             © 2025 TINA Bakery | Designed with 💖 by Nguyen Minh Phuong
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const video = document.getElementById("menuVideo");
+            if (video) {
+                video.load();
+                video.addEventListener('canplaythrough', () => {
+                    video.play().catch(() => {});
+                });
+            }
+        });
+    </script>
+
 
 
 </body>
