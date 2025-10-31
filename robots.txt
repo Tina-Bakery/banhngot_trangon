@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap khai báo cho công cụ tìm kiếm
+Sitemap: https://tina-bakery.github.io/banhngot_trangon/sitemap.xml
+
+# Thông tin nhận diện website
+Host: https://tina-bakery.github.io
+
+# Ngăn chặn các trang lỗi hoặc thử nghiệm (nếu có)
+Disallow: /404.html
+Disallow: /temp/
