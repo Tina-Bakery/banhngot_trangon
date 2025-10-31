@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" id="top">
 
 <head>
     <!-- 🌍 CẤU HÌNH CƠ BẢN -->
@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TINA Bakery – Freshly Baked Everyday | Bánh Tươi Mỗi Ngày</title>
     <link rel="icon" type="image/png" href="hinh/LG.png">
+    <link rel="apple-touch-icon" href="hinh/LG.png">
 
     <!-- 📝 MÔ TẢ & TỪ KHÓA SEO -->
     <meta name="description" content="TINA Bakery – tiệm bánh handmade tại Quận 3, TP.HCM. Bánh mì, bánh kem, cà phê và bộ sưu tập Giáng Sinh 2025 với ưu đãi hấp dẫn.">
@@ -14,14 +15,14 @@
     <meta name="author" content="TINA Bakery - Nguyen Minh Phuong">
 
     <!-- 🔗 LINK CHÍNH -->
-    <link rel="canonical" href="https://tina-bakery.github.io/banhngot-trangon/">
+    <link rel="canonical" href="https://tina-bakery.github.io/banhngot_trangon/">
 
-    <!-- 🪪 OPEN GRAPH (FACEBOOK PREVIEW) -->
+    <!-- 🪪 OPEN GRAPH -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="TINA Bakery – Freshly Baked Everyday">
     <meta property="og:description" content="TINA Bakery – tiệm bánh handmade tại Quận 3, TP.HCM. Bánh mì, bánh kem, cà phê và bộ sưu tập Giáng Sinh 2025 với ưu đãi hấp dẫn.">
-    <meta property="og:image" content="https://banhkemhannie.com/wp-content/uploads/2023/11/2.jpg">
-    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image" content="https://tina-bakery.github.io/banhngot_trangon/hinh/LG.png">
+    <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://tina-bakery.github.io/banhngot_trangon/index.html">
@@ -31,7 +32,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="TINA Bakery – Freshly Baked Everyday">
     <meta name="twitter:description" content="Tiệm bánh handmade với bánh mì, bánh kem, cà phê và trà. Ưu đãi mùa lễ hội cực hấp dẫn!">
-    <meta name="twitter:image" content="https://banhkemhannie.com/wp-content/uploads/2023/11/2.jpg">
+    <meta name="twitter:image" content="https://tina-bakery.github.io/banhngot_trangon/hinh/LG.png">
 
     <!-- 💅 FONT & CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
@@ -40,12 +41,12 @@
 
 <body>
     <!-- 🧁 HEADER -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="logo">
             <img src="hinh/LG.png" alt="Logo TINA Bakery">
             <span>TINA Bakery</span>
         </div>
-        <nav class="nav">
+        <nav class="nav" role="navigation" aria-label="Điều hướng chính">
             <a href="index.html" class="active">Trang chủ</a>
             <a href="sanpham.html">Thực đơn</a>
             <a href="cart.html">Giỏ hàng</a>
@@ -56,8 +57,9 @@
     <!-- 🌿 HERO VIDEO -->
     <section class="hero">
         <video id="heroVideo" class="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="hinh/LG.png" style="object-fit: cover; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: -1;">
-    <source src="video/trangchu.mp4" type="video/mp4">
-  </video>
+            <source src="video/trangchu.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ video.
+        </video>
 
         <div class="overlay">
             <img src="hinh/LG.png" alt="Tina Bakery Logo" class="hero-logo">
@@ -66,21 +68,14 @@
         </div>
     </section>
 
-    <div class="overlay">
-        <img src="hinh/LG.png" alt="Tina Bakery Logo" class="hero-logo">
-        <h1>Freshly Baked, Everyday</h1>
-        <a href="sanpham.html" class="btn">Khám phá thực đơn</a>
-    </div>
-    </section>
-
     <!-- 🥐 CÂU CHUYỆN -->
     <section class="our-story">
         <div class="story-container">
             <div class="story-images">
-                <img src="https://torog-cdn.kootoro.com/cms/upload/image/1687833953692-thi%E1%BA%BFt%20k%E1%BA%BF%20qu%C3%A1n%20b%C3%A1nh%20ng%E1%BB%8Dt.jpg" alt="Không gian quán">
-                <img src="https://tiki.vn/blog/wp-content/uploads/2025/03/thumb-1-5.jpg" alt="Bánh mì">
-                <img src="https://i.ex-cdn.com/vntravellive.com/files/thuhanguyen/2022/07/26/289986693_987624848589163_7655776641539053985_n-1407.jpg" alt="Trưng bày bánh">
-                <img src="https://www.btaskee.com/wp-content/uploads/2023/03/trang-tri-banh-sinh-nhat-bang-kem.jpg" alt="Bánh kem">
+                <img src="https://torog-cdn.kootoro.com/cms/upload/image/1687833953692-thi%E1%BA%BFt%20k%E1%BA%BF%20qu%C3%A1n%20b%C3%A1nh%20ng%E1%BB%8Dt.jpg" alt="Không gian quán TINA Bakery">
+                <img src="https://tiki.vn/blog/wp-content/uploads/2025/03/thumb-1-5.jpg" alt="Bánh mì nướng tươi tại TINA Bakery">
+                <img src="https://i.ex-cdn.com/vntravellive.com/files/thuhanguyen/2022/07/26/289986693_987624848589163_7655776641539053985_n-1407.jpg" alt="Quầy trưng bày bánh TINA Bakery">
+                <img src="https://www.btaskee.com/wp-content/uploads/2023/03/trang-tri-banh-sinh-nhat-bang-kem.jpg" alt="Bánh kem sinh nhật trang trí đẹp">
             </div>
             <div class="story-text">
                 <h2>TINA Bakery</h2>
@@ -95,19 +90,19 @@
         <h2>Danh mục nổi bật</h2>
         <div class="menu-grid">
             <div class="menu-card">
-                <img src="https://cdn.tgdd.vn/2020/10/CookProduct/0.-1200x674.jpg" alt="Bread">
+                <img src="https://cdn.tgdd.vn/2020/10/CookProduct/0.-1200x674.jpg" alt="Bánh mì tươi mỗi ngày">
                 <h3>Bánh Mì</h3>
                 <p>Thơm mềm, nướng mới mỗi sáng.</p>
                 <a href="banhmi.html">Xem thêm</a>
             </div>
             <div class="menu-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnxh9qySxFgI-xPxjNTOhu91FoBxfHL4-LyFgeCph_y2GRg9Qp1xNkXfKjKNkfo-SGd7A&usqp=CAU" alt="Cake">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnxh9qySxFgI-xPxjNTOhu91FoBxfHL4-LyFgeCph_y2GRg9Qp1xNkXfKjKNkfo-SGd7A&usqp=CAU" alt="Bánh kem trang trí tinh tế">
                 <h3>Bánh Kem</h3>
                 <p>Trang trí tinh tế cho mọi dịp.</p>
                 <a href="banhkem.html">Xem thêm</a>
             </div>
             <div class="menu-card">
-                <img src="https://horecavn.com/wp-content/uploads/2024/05/bi-quyet-chup-anh-do-uong-bat-mat-khong-ton-nhieu-chi-phi_20240526184551.jpg" alt="Coffee">
+                <img src="https://horecavn.com/wp-content/uploads/2024/05/bi-quyet-chup-anh-do-uong-bat-mat-khong-ton-nhieu-chi-phi_20240526184551.jpg" alt="Cà phê và trà TINA Bakery">
                 <h3>Cà Phê & Trà</h3>
                 <p>Hương vị kết hợp hoàn hảo.</p>
                 <a href="tra.html">Xem thêm</a>
@@ -119,14 +114,14 @@
     <section class="newsletter">
         <h2>Đăng ký nhận tin</h2>
         <p>Nhận thông tin ưu đãi và sản phẩm mới nhất từ TINA Bakery.</p>
-        <form class="form">
-            <input type="email" placeholder="Nhập email của bạn" required>
+        <form class="form" role="form" aria-label="Form đăng ký nhận tin TINA Bakery">
+            <input type="email" placeholder="Nhập email của bạn" required aria-label="Email nhận tin ưu đãi từ TINA Bakery">
             <button type="submit" class="btn">Đăng ký</button>
         </form>
     </section>
 
     <!-- 🧾 FOOTER -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div>
             <h3>TINA Bakery</h3>
             <p>Bánh tươi mỗi ngày – đậm hương vị yêu thương.</p>
@@ -145,9 +140,9 @@
         </div>
         <div>
             <h3>Theo dõi chúng tôi</h3>
-            <a href="https://www.facebook.com/share/p/19G6HyzMJU/" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/p/DGcvU5bIabW/?igsh=ZWt3dmliMjRzeW4w" target="_blank">Instagram</a>
-            <a href="https://vt.tiktok.com/ZSUoANfdc/" target="_blank">TikTok</a>
+            <a href="https://www.facebook.com/tinabakery.hcm" target="_blank" aria-label="Facebook của TINA Bakery">Facebook</a>
+            <a href="https://www.instagram.com/tinabakery.hcm" target="_blank" aria-label="Instagram của TINA Bakery">Instagram</a>
+            <a href="https://www.tiktok.com/@tinabakery.hcm" target="_blank" aria-label="TikTok của TINA Bakery">TikTok</a>
         </div>
         <div>
             <h3>Liên hệ</h3>
@@ -160,12 +155,15 @@
         </div>
     </footer>
 
+    <!-- ⬆️ Nút lên đầu trang -->
+    <a href="#top" class="back-top" title="Lên đầu trang" style="position: fixed; bottom: 20px; right: 20px; font-size: 22px; text-decoration: none;">⬆</a>
+
     <!-- 🎄 POPUP GIÁNG SINH -->
-    <div class="promo-popup" id="xmasPopup">
+    <div class="promo-popup" id="xmasPopup" role="dialog" aria-modal="true" aria-label="Ưu đãi Giáng Sinh TINA Bakery">
         <div class="promo-content christmas">
-            <button class="close-btn" onclick="closePopup()">×</button>
+            <button class="close-btn" onclick="closePopup()" aria-label="Đóng cửa sổ">×</button>
             <div class="promo-slide active">
-                <img src="hinh/giangsinh.png" alt="Bộ Sưu Tập Giáng Sinh">
+                <img src="hinh/giangsinh.png" alt="Bộ Sưu Tập Giáng Sinh TINA Bakery">
                 <div class="promo-text">
                     <h3>🎄 Ra Mắt Bộ Sưu Tập Giáng Sinh 2025</h3>
                     <p>Ưu đãi 20% từ 20–25/12. Ngọt ngào cho mùa yêu thương!</p>
@@ -173,7 +171,7 @@
                 </div>
             </div>
             <div class="promo-slide">
-                <img src="hinh/10.png" alt="Đặt Bánh Noel Online">
+                <img src="hinh/10.png" alt="Ưu đãi đặt bánh Noel online">
                 <div class="promo-text">
                     <h3>💻 Giảm 10% Khi Đặt Hàng Online</h3>
                     <p>Đặt bánh từ 150.000đ trở lên – nhận ưu đãi 10% đến hết 31/12!</p>
@@ -181,32 +179,27 @@
                 </div>
             </div>
             <div class="promo-slide">
-                <img src="hinh/15.png" alt="Cà phê Giáng Sinh">
+                <img src="hinh/15.png" alt="Cà phê Giáng Sinh TINA Bakery">
                 <div class="promo-text">
                     <h3>🎅 Giảm 15% Khi Mua 2 Ly Cà Phê</h3>
                     <p>Uống cùng bạn bè, ấm áp mùa lễ hội!</p>
                     <a href="caffe.html" class="btn-xmas">Khám Phá Ngay</a>
                 </div>
             </div>
-            <button class="nav-btn prev" onclick="changeSlide(-1)">&#10094;</button>
-            <button class="nav-btn next" onclick="changeSlide(1)">&#10095;</button>
+            <button class="nav-btn prev" onclick="changeSlide(-1)" aria-label="Slide trước">&#10094;</button>
+            <button class="nav-btn next" onclick="changeSlide(1)" aria-label="Slide tiếp">&#10095;</button>
         </div>
     </div>
 
     <!-- 🎁 Nút quà -->
-    <div class="gift-btn" id="giftBtn" onclick="openPopup()" title="Xem ưu đãi Giáng Sinh">🎁</div>
+    <div class="gift-btn" id="giftBtn" onclick="openPopup()" title="Xem ưu đãi Giáng Sinh" aria-label="Nút mở popup ưu đãi">🎁</div>
 
     <!-- 🎄 SCRIPT POPUP -->
     <script>
         let currentSlide = 0;
         let autoSlideInterval;
-
         window.addEventListener("load", () => {
-            const popup = document.getElementById("xmasPopup");
-            const giftBtn = document.getElementById("giftBtn");
-
-            // 🎁 Luôn hiển thị nút quà mỗi lần mở trang
-            giftBtn.classList.add("visible");
+            document.getElementById("giftBtn").classList.add("visible");
         });
 
         function openPopup() {
@@ -241,7 +234,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             const video = document.getElementById("heroVideo");
             if (video) {
-                video.load(); // tải sẵn
+                video.load();
                 video.addEventListener('canplaythrough', () => {
                     video.play().catch(() => {});
                 });
